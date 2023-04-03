@@ -14,7 +14,7 @@ Console.WriteLine("Hello World!");
 
 static bool FindA(string args)
 {
-	if (args.Contains("a") || args.Contains("a"))
+	if (args.Contains("a") || args.Contains("A"))
 	{
 		return true;
 
