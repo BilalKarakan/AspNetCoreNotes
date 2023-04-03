@@ -1,1 +1,1 @@
-# SampleProjectWorks
+It includes the notes I have taken on developing web applications and APIs using the MVC approach with Asp.Net Core. It is a project where I apply what I have learned and constantly update it. It is an application where I take notes of my own work. I am aware that comment lines can create messy code, but I prefer to keep different approaches as comment lines.
