@@ -1,0 +1,41 @@
+﻿@model List<Mvc.Models.Customer>
+
+<html>
+<head>
+    <title>Customer - List</title>
+    <link href="~/style.css" rel="stylesheet" />
+    <link href="~/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container">
+        <h3>Customer List</h3>
+        <a class="add-operation" href="/Home/Create/">Create</a>
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                    <th>Operation</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.FirstName</td>
+                        <td>@item.LastName</td>
+                        <td>@item.Age</td>
+                        <td>
+                            <a class="update-operation" href="/Home/Update/@item.Id">Update</a>
+                            <a class="remove-operation" href="/Home/Remove/@item.Id">Remove</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

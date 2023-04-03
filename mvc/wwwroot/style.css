@@ -1,0 +1,23 @@
+﻿body {
+    color:green;
+}
+a{
+    text-decoration:none;
+}
+.add-operation,.update-operation,.remove-operation{
+    border:1px solid black;
+    padding:10px;
+    border-radius:4px;
+    margin-bottom:20px;
+    margin-top:20px;
+    color:white;
+    background-color:black;
+    display:inline-block;
+    text-decoration:none;
+    width:100px;
+    text-align:center;
+}
+.add-operation:hover,.update-operation:hover,.remove-operation:hover{
+    background-color:white;
+    color:black;
+}

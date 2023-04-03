@@ -1,0 +1,63 @@
+﻿<html>
+    <head>
+        <style>
+            p{
+                font-size: 40px;
+                text-align: center;
+                color: rgb(130,35,198);
+                margin-top: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        @*
+        @{
+            int age = 23;
+            string value = string.Empty;
+            if (age>18)
+            {
+                value = "Yaş 18'den büyüktür.";
+            }else if (true)
+            {
+                value = "Yaş 18'dir.";
+            }else
+            {
+                value = "Yaş 18'den küçüktür";
+            }
+
+            int Calculate(int number1, int number2){
+                return number1 + number2;
+            }
+            var result = Calculate(4,5);
+
+            List<string> names = new() {"Bilal", "Ahmet", "Ayşe", "Fatma"};
+        }
+    @foreach (var item in names)
+    {
+        <p>@(item == "Bilal" ? "Bilal Karakan" : item)</p>
+    }
+    <p>
+        Hello World, Here Is Index Action Method!
+    </p>
+    <p>
+        Durum = @value
+    </p>
+    <p>
+        Durum = @(age > 20 ? "Yaş 20'den büyüktür" : "Yaş 20'den küçüktür'")
+    </p>
+    <p>
+        Durum = @result
+    </p>
+    *@
+
+    <p>
+        @ViewBag.Name @*Dorothea Brooke*@
+    </p>
+    <p>
+        @ViewData["Name"]  @*Dorothea Brooke*@
+    </p>
+    <p>
+        @TempData["Name"]  @*Will Ladislaw*@
+    </p>
+    </body>
+</html>
