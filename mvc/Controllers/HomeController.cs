@@ -22,7 +22,19 @@ namespace Mvc.Controllers
 
             var id = (string)RouteData.Values["id"];    
 
+            var customers = CustomerContext.Customers.ToList();
 
+            return View(customers);
+            
+        }
+
+        public IActionResult Index2(int id)
+        {
+            return View();
+        }
+
+        public IActionResult Index3()
+        {
             ViewBag.Name = "Edward Casaubon";
             ViewData["Name"] = "Dorothea Brooke";
             TempData["Name"] = "Will Ladislaw";
@@ -33,17 +45,6 @@ namespace Mvc.Controllers
             TempData["Name"] = "Mehmet";
 
             return View();
-        }
-
-        public IActionResult Index2(int id)
-        {
-            return View();
-        }
-
-        public IActionResult Index3()
-        {
-            var customers = CustomerContext.Customers;
-            return View(customers);
         }
 
         [HttpGet]
@@ -103,7 +104,21 @@ namespace Mvc.Controllers
         public IActionResult Update()
         {
             var id = int.Parse(RouteData.Values["id"].ToString());
-            return View();
+            var updatedCustomer = CustomerContext.Customers.FirstOrDefault(x => x.Id == id);
+            return View(updatedCustomer);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateCustomer()
+        {
+            var id = int.Parse(HttpContext.Request.Form["id"].ToString());
+            var updatedCustomer = CustomerContext.Customers.FirstOrDefault(I => I.Id == id);
+
+            updatedCustomer.FirstName = HttpContext.Request.Form["firstName"].ToString();
+            updatedCustomer.LastName = HttpContext.Request.Form["lastName"].ToString();
+            updatedCustomer.Age = int.Parse(HttpContext.Request.Form["age"].ToString());
+
+            return RedirectToAction("Index");
         }
     }
 }

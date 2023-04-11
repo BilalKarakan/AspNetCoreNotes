@@ -1,63 +1,41 @@
-﻿<html>
-    <head>
-        <style>
-            p{
-                font-size: 40px;
-                text-align: center;
-                color: rgb(130,35,198);
-                margin-top: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        @*
-        @{
-            int age = 23;
-            string value = string.Empty;
-            if (age>18)
-            {
-                value = "Yaş 18'den büyüktür.";
-            }else if (true)
-            {
-                value = "Yaş 18'dir.";
-            }else
-            {
-                value = "Yaş 18'den küçüktür";
-            }
+﻿@model List<Mvc.Models.Customer>
 
-            int Calculate(int number1, int number2){
-                return number1 + number2;
-            }
-            var result = Calculate(4,5);
+<html>
+<head>
+    <title>Customer - List</title>
+    <link href="~/style.css" rel="stylesheet" />
+    <link href="~/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
 
-            List<string> names = new() {"Bilal", "Ahmet", "Ayşe", "Fatma"};
-        }
-    @foreach (var item in names)
-    {
-        <p>@(item == "Bilal" ? "Bilal Karakan" : item)</p>
-    }
-    <p>
-        Hello World, Here Is Index Action Method!
-    </p>
-    <p>
-        Durum = @value
-    </p>
-    <p>
-        Durum = @(age > 20 ? "Yaş 20'den büyüktür" : "Yaş 20'den küçüktür'")
-    </p>
-    <p>
-        Durum = @result
-    </p>
-    *@
+    <div class="container">
+        <h3>Customer List</h3>
+        <a class="add-operation" href="/Home/Create/">Create</a>
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                    <th>Operation</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.FirstName</td>
+                        <td>@item.LastName</td>
+                        <td>@item.Age</td>
+                        <td>
+                            <a class="update-operation" href="/Home/Update/@item.Id">Update</a>
+                            <a class="remove-operation" href="/Home/Remove/@item.Id">Remove</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 
-    <p>
-        @ViewBag.Name @*Dorothea Brooke*@
-    </p>
-    <p>
-        @ViewData["Name"]  @*Dorothea Brooke*@
-    </p>
-    <p>
-        @TempData["Name"]  @*Will Ladislaw*@
-    </p>
-    </body>
+</body>
 </html>
