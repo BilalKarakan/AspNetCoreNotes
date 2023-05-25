@@ -37,12 +37,13 @@ namespace mvc
 
             app.UseEndpoints(endpoint =>
             {
+                /*
                 endpoint.MapControllerRoute(
                     name: "routeOfBilal",
                     pattern: "Bilal/{action}",
                     defaults: new { Controller = "Home" }
                 );
-
+                */
                 endpoint.MapControllerRoute(
                     name: "default",
                     pattern: "{Controller}/{Action}/{id?}",

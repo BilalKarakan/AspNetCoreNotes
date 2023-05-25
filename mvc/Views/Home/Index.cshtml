@@ -1,4 +1,8 @@
-﻿@model List<Mvc.Models.Customer>
+﻿@using Mvc.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<Customer>
+@*@model List<Mvc.Models.Customer>*@
+
 
 <html>
 <head>
@@ -10,7 +14,7 @@
 
     <div class="container">
         <h3>Customer List</h3>
-        <a class="add-operation" href="/Home/Create/">Create</a>
+        <a class="add-operation" asp-action="Create" asp-controller="Home">Create</a>
         <table class="table table-hover table-bordered">
             <thead>
                 <tr>
@@ -28,8 +32,8 @@
                         <td>@item.LastName</td>
                         <td>@item.Age</td>
                         <td>
-                            <a class="update-operation" href="/Home/Update/@item.Id">Update</a>
-                            <a class="remove-operation" href="/Home/Remove/@item.Id">Remove</a>
+                            <a class="update-operation" asp-action = "Update" asp-controller = "Home" asp-route-id = "@item.Id">Update</a>
+                            <a class="remove-operation" asp-action = "Remove" asp-controller = "Home" asp-route-id = "@item.Id">Remove</a>
                         </td>
                     </tr>
                 }
