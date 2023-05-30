@@ -1,4 +1,6 @@
-﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+﻿@using Mvc.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Customer
 
 <html>
 <head>
@@ -11,17 +13,17 @@
         <form asp-action="CreateWithForm" asp-controller="Home" method="post">
             <div class="form-group">
                 <label>Customer Name:</label>
-                <input type="text" name="firstName" class="form-control" />
+                <input asp-for="@Model.FirstName" class="form-control" />
             </div>
 
             <div class="form-group">
                 <label>Customer Last Name:</label>
-                <input type="text" name="lastName" class="form-control" />
+                <input asp-for="@Model.LastName" class="form-control" />
             </div>
 
             <div class="form-group">
                 <label>Customer Age:</label>
-                <input type="text" name="age" class="form-control" />
+                <input asp-for="@Model.Age" class="form-control" />
             </div>
             <div class="form-group text-right">
                 <button type="submit" class="btn btn-primary">Create</button>

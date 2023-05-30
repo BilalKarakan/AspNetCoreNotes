@@ -50,16 +50,17 @@ namespace Mvc.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            return View(new Customer());
         }
 
         [HttpPost]
-        public IActionResult CreateWithForm()
+        public IActionResult CreateWithForm(Customer customer)
         {
-
+            /*
             var firstName = HttpContext.Request.Form["firstName"].ToString();
             var lastName = HttpContext.Request.Form["lastName"].ToString();
             var age = int.Parse(HttpContext.Request.Form["age"].ToString());
+            */
 
             /*
             var lastCustomer = CustomerContext.Customers.Last();
@@ -73,12 +74,14 @@ namespace Mvc.Controllers
                 lastCustomer = CustomerContext.Customers.Last();
             }
 
-            int id = 1;
+            customer.Id = 1;
+
             if (lastCustomer != null )
             {
-                id = lastCustomer.Id + 1;
+                customer.Id = lastCustomer.Id + 1;
             }
 
+            /*
             CustomerContext.Customers.Add(new Customer
             {
                 Id = id,
@@ -86,6 +89,9 @@ namespace Mvc.Controllers
                 LastName = lastName,
                 Age = age
             });
+            */
+
+            CustomerContext.Customers.Add(customer);
 
             //return RedirectToAction("Create");
             return RedirectToAction("Index3");

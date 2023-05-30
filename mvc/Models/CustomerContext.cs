@@ -44,7 +44,7 @@ namespace Mvc.Models
             new Customer {Id = 1, FirstName = "Enes", LastName = "Karakan", Age = 28},
             new Customer {Id = 2, FirstName = "Fatih", LastName = "Karakan", Age = 26},
             new Customer {Id = 3, FirstName = "Bilal", LastName = "Karakan", Age = 24},
-            new Customer {Id = 4, FirstName = "Yusuf", LastName = "Karakan", Age = 21},
+            new Customer {Id = 4, FirstName = "Yusuf", LastName = "Karakan", Age = 22},
         };
     }
 }
