@@ -1,12 +1,10 @@
 ﻿@model Mvc.Models.Customer
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-<html>
-    <head>
-        <title>Update Customer</title>
-        <link href="~/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div class="container">
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+        
             <h3>Update - Customer</h3>
             <form asp-action="Update" asp-controller="Home" method="post">
                 <input type="hidden" name="id" value="@Model.Id"/>
@@ -26,6 +24,4 @@
                     <button class="btn btn-primary" type="submit">Save</button>
                 </div>
             </form>
-        </div>
-    </body>
-</html>
+        
