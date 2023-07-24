@@ -1,6 +1,4 @@
-﻿@using Mvc.Models
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@model Customer
+﻿@model Customer
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -21,7 +19,7 @@
                 <label>Customer Age:</label>
                 <input asp-for="@Model.Age" class="form-control" />
             </div>
-            <div class="form-group text-right">
+            <div class="form-group text-right mt-2">
                 <button type="submit" class="btn btn-primary">Create</button>
             </div>
         </form>
