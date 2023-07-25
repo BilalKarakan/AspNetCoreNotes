@@ -4,4 +4,11 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\a\e\" />
+    <Folder Include="wwwroot\c\" />
+    <Folder Include="wwwroot\d\" />
+    <Folder Include="wwwroot\b\" />
+  </ItemGroup>
+
 </Project>

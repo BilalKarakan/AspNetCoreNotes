@@ -1,0 +1,33 @@
+﻿@model DirectoryInfo[]
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <style>
+        table,th,td{
+            border:1px solid black;
+            padding:10px;
+        }
+    </style>
+</head>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Creation Date</th>
+            <th>Path</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in @Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.CreationTime</td>
+                <td>@item.FullName</td>
+            </tr>
+        }
+    </tbody>
+</table>
