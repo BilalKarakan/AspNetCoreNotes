@@ -33,5 +33,15 @@ namespace Mvc.Controllers
             }
             return View();
         }
+
+        public IActionResult Remove(string folderName)
+        {
+            DirectoryInfo info = new DirectoryInfo(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", folderName));
+            if (info.Exists)
+            {
+                info.Delete(true);
+            }
+            return RedirectToAction("List");
+        }
     }
 }
