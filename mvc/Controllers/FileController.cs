@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.IO;
 
 namespace Mvc.Controllers
@@ -24,6 +25,19 @@ namespace Mvc.Controllers
             FileInfo fileInfo = new(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "files", fileName));
             if (!fileInfo.Exists)
                 fileInfo.Create();
+
+            return RedirectToAction("List");
+        }
+
+        public IActionResult CreateWithData()
+        {
+            FileInfo info = new(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "files", Guid.NewGuid().ToString()));
+
+            StreamWriter writer = info.CreateText();
+
+            writer.Write("Hello World!");
+
+            writer.Close();
 
             return RedirectToAction("List");
         }
