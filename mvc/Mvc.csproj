@@ -9,6 +9,7 @@
     <Folder Include="wwwroot\c\" />
     <Folder Include="wwwroot\d\" />
     <Folder Include="wwwroot\b\" />
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
 </Project>
