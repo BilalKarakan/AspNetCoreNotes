@@ -10,7 +10,8 @@
 
         <div class="row">
             <div class="col-4">
-                <partial name="_EmployeePartial" model="EmployeeContext.employees" />
+                @* <partial name="_EmployeePartial" model="EmployeeContext.employees" /> *@
+                @await Component.InvokeAsync("EmployeeComponent", new{@role="Manager"})
             </div>
             <div class="col-8">
             <a class="add-operation" asp-action="Create" asp-controller="Home">Create</a>

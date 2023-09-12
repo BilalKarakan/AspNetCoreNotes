@@ -9,7 +9,8 @@
     <a asp-action="Create">Create</a>
     <div class="row">
         <div class="col-4">
-            <partial name="_EmployeePartial" model="EmployeeContext.employees" />
+            @await Component.InvokeAsync("EmployeeComponent", new {@role="Developer"})
+            @* <partial name="_EmployeePartial" model="EmployeeContext.employees" /> *@
         </div>
         <div class="col-8">
             <table class="table table-hover table-bordered">
