@@ -10,6 +10,8 @@
 
         <div class="row">
             <div class="col-4">
+                <description font-type="Bold"></description>
+
                 @* <partial name="_EmployeePartial" model="EmployeeContext.employees" /> *@
                 @await Component.InvokeAsync("EmployeeComponent", new{@role="Manager"})
             </div>
